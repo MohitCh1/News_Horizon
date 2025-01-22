@@ -1,4 +1,4 @@
-const API_KEY = "48556e3906024e638aa56f953cc274bb";
+const API_KEY = "48556e3906024e638aa56f953cc274bb";  // Replace with your own API key from newsapi.org
 const url = "https://newsapi.org/v2/everything?q=";
 window.addEventListener("load", () => fetchNews("India")); // Fetch news for India on page load
 
@@ -74,7 +74,7 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
 
     recognition.onresult = (event) => {
         const transcript = event.results[0][0].transcript;
-        console.log('Transcript:', transcript); // Debugging line
+        console.log('Transcript:', transcript);
         searchInput.value = transcript;
         fetchNews(transcript);
         curSelectedNav?.classList.remove('active');
@@ -83,26 +83,15 @@ if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
 
     recognition.onerror = (event) => {
         console.error('Speech recognition error detected:', event.error);
-        if (event.error === 'no-speech') {
-            console.log('No speech detected. Please try again.');
-        } else if (event.error === 'audio-capture') {
-            console.log('Audio capture failed. Please check your microphone.');
-        } else if (event.error === 'not-allowed') {
-            console.log('Microphone access is not allowed.');
-        } else if (event.error === 'aborted') {
-            console.log('Speech recognition was aborted.');
-        }
     };
 
     voiceButton.addEventListener("click", () => {
         recognition.start();
-        console.log('Voice recognition started');
     });
 
     recognition.onend = () => {
         console.log('Voice recognition ended');
     };
-
 } else {
     console.error('Web Speech API is not supported in this browser.');
 }
