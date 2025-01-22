@@ -25,11 +25,11 @@ p {
 }
 
 a {
-    text-decoration: none; /* all underline will be removed */
+    text-decoration: none;
 }
 
 ul {
-    list-style: none; /* all bullets point will be removed */
+    list-style: none;
 }
 
 .flex {
@@ -38,8 +38,8 @@ ul {
 }
 
 .container {
-    max-width: 1100px; /* so that all items have the same width and align properly */
-    margin-inline: auto; /* so that all items will evenly align from left and right */
+    max-width: 1100px;
+    margin-inline: auto;
     overflow: hidden;
 }
 
@@ -71,7 +71,7 @@ nav {
 }
 
 .hover-link:active {
-    color: blue; /* when we click it, the color will change to blue */
+    color: blue;
 }
 
 .search-bar {
